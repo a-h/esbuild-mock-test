@@ -5,8 +5,4 @@ describe("index.ts", () => {
     const result = subjectUnderTest();
     expect(result).toEqual("result: concrete");
   })
-  it("can be mocked out", () => {
-    const result = subjectUnderTest();
-    expect(result).toEqual("result: concrete");
-  })
 })
