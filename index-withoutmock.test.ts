@@ -1,8 +1,11 @@
-import {subjectUnderTest} from "."
+import { subjectUnderTest } from ".";
 
 describe("index.ts", () => {
-  it("can be executed with the concrete dependency", () => {
+  it("can be executed with the concrete dependencies", () => {
     const result = subjectUnderTest();
-    expect(result).toEqual("result: concrete");
-  })
-})
+    expect(result).toEqual({
+      internal: "concrete",
+      module: "concrete",
+    });
+  });
+});

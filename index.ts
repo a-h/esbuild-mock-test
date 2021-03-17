@@ -1,6 +1,15 @@
 import { moduleDependency } from "./dependency";
 
-export const subjectUnderTest = (): string => {
-  const result = moduleDependency();
-  return `result: ${result}`;
+export const internalDependency = () => "concrete";
+
+export interface Result {
+  internal: string;
+  module: string;
+}
+
+export const subjectUnderTest = (): Result => {
+  return {
+    internal: internalDependency(),
+    module: moduleDependency(),
+  };
 };
