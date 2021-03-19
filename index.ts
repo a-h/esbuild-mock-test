@@ -1,6 +1,9 @@
 import { moduleDependency } from "./dependency";
 
-export const internalDependency = () => "concrete";
+// Doesn't work.
+//export const internalDependency = () => "concrete";
+
+exports.internalDependency = () => "concrete";
 
 export interface Result {
   internal: string;
@@ -9,7 +12,7 @@ export interface Result {
 
 export const subjectUnderTest = (): Result => {
   return {
-    internal: internalDependency(),
+    internal: exports.internalDependency(),
     module: moduleDependency(),
   };
 };
